@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rumah Hemat — situs anggaran keluarga Indonesia: dashboard, transaksi, anggaran, target tabungan, dan laporan bulanan.">
+<title>Rumah Hemat — Anggaran Keluarga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<noscript><p style="max-width:680px;margin:24px auto;padding:16px 20px;background:#fff3cd;border:2px solid #d97706;border-radius:12px">Rumah Hemat butuh JavaScript untuk menampilkan anggaran keluarga. Aktifkan JavaScript lalu muat ulang halaman ini.</p></noscript>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-rumah" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5v9a1.5 1.5 0 0 1-1.5 1.5H14v-6h-4v6H4.5A1.5 1.5 0 0 1 3 20.5v-9Z"/></symbol>
+    <symbol id="i-dompet" viewBox="0 0 24 24"><path d="M3 6.5A2.5 2.5 0 0 1 5.5 4h11A2.5 2.5 0 0 1 19 6.5v1h1.5A1.5 1.5 0 0 1 22 9v9.5a2.5 2.5 0 0 1-2.5 2.5h-14A2.5 2.5 0 0 1 3 18.5v-12Zm16 4.5H5.5v7.5h14V11Z"/><circle cx="17" cy="14.5" r="1.2"/></symbol>
+    <symbol id="i-belanja" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Zm3.2-5a4.5 4.5 0 0 1 8.7 1.6l-1.9.5A2.5 2.5 0 0 0 10.2 5L9 5.4 8.2 3Z"/></symbol>
+    <symbol id="i-makan" viewBox="0 0 24 24"><path d="M7 3v8a2 2 0 0 0 2 2v8h2v-8a2 2 0 0 0 2-2V3h-2v6h-2V3H7Zm11 0c-2 0-3 2-3 5v4h2v9h2v-9h2V8c0-3-1-5-3-5Z"/></symbol>
+    <symbol id="i-listrik" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5L13 2Z"/></symbol>
+    <symbol id="i-transport" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v10a2 2 0 0 1-2 2v2h-2.5v-2h-7V19H6v-2a2 2 0 0 1-2-2V5Zm3 4.5A1.8 1.8 0 1 0 7 13a1.8 1.8 0 0 0 0-3.6Zm10 0a1.8 1.8 0 1 0 0 3.6 1.8 1.8 0 0 0 0-3.6ZM7 6h10v5H7V6Z"/></symbol>
+    <symbol id="i-sekolah" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17.5H6.5A2.5 2.5 0 0 0 4 22V4.5Zm4 3.5v2h8V8H8Zm0 4v2h6v-2H8Z"/></symbol>
+    <symbol id="i-sehat" viewBox="0 0 24 24"><path d="M12 21s-8.5-5.2-8.5-11A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 3c0 5.8-8.5 11-8.5 11ZM12 12.5v3M10.5 14h3"/></symbol>
+    <symbol id="i-hiburan" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M10 8.8v6.4l5.2-3.2L10 8.8Z"/></symbol>
+    <symbol id="i-tagihan" viewBox="0 0 24 24"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 0v6h6M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.2"/><circle cx="12" cy="12" r="1.8"/></symbol>
+    <symbol id="i-laporan" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></symbol>
+    <symbol id="i-cari" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#/dashboard">
+      <span class="brand-mark"><svg><use href="#i-rumah"/></svg></span>
+      <span class="brand-text">
+        <strong>Rumah Hemat</strong>
+        <small>Keluarga Andi &amp; Sari &middot; November 2026</small>
+      </span>
+    </a>
+    <nav class="mainnav" id="mainnav">
+      <a href="#/dashboard" data-route="dashboard"><svg><use href="#i-rumah"/></svg>Dashboard</a>
+      <a href="#/transaksi" data-route="transaksi"><svg><use href="#i-dompet"/></svg>Transaksi</a>
+      <a href="#/anggaran" data-route="anggaran"><svg><use href="#i-tagihan"/></svg>Anggaran</a>
+      <a href="#/target" data-route="target"><svg><use href="#i-target"/></svg>Target</a>
+      <a href="#/laporan" data-route="laporan"><svg><use href="#i-laporan"/></svg>Laporan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app" class="wrap"></main>
+
+<footer class="wrap foot">
+  <p><strong>Rumah Hemat</strong> — anggaran keluarga, tersimpan di peramban ini saja. Data contoh keluarga Andi &amp; Sari; ubah sesukamu, semua tersimpan otomatis.</p>
+  <p class="foot-note">Semua angka dalam Rupiah (Rp). Dibuat untuk keluarga Indonesia.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="charts.js"></script>
+<script src="views.js"></script>
+</body>
+</html>
