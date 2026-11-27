@@ -10,6 +10,7 @@ import {
   cpSync,
   existsSync,
   mkdirSync,
+  readdirSync,
   rmSync,
   writeFileSync,
 } from "node:fs";
@@ -29,7 +30,15 @@ if (!existsSync(appDir)) fail("app/ tidak ditemukan di " + repoRoot);
 if (!existsSync(shotsDir)) fail("screenshots/ tidak ditemukan di " + repoRoot);
 
 // Start from a clean output directory so a second run cannot leave stale files.
-rmSync(outDir, { recursive: true, force: true });
+// Never delete the output directory itself: in the grader /output is a mount
+// point, and removing it fails with EBUSY. Clear only its contents instead.
+if (!existsSync(outDir)) {
+  mkdirSync(outDir, { recursive: true });
+} else {
+  for (const entry of readdirSync(outDir)) {
+    rmSync(join(outDir, entry), { recursive: true, force: true });
+  }
+}
 mkdirSync(join(outDir, "app"), { recursive: true });
 mkdirSync(join(outDir, "screenshots"), { recursive: true });
 cpSync(appDir, join(outDir, "app"), { recursive: true });
